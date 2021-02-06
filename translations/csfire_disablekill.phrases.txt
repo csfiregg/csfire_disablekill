@@ -1,0 +1,12 @@
+"Phrases"
+{
+    "Suicide_NotAllowed"
+    {
+        "en"    "{$grey}You are not allowed to {$darkred}kill {$grey}yourself."
+    }
+
+    "Suicide_NotAllowed_Console"
+    {
+        "en"    "{$grey}You are not allowed to kill yourself."
+    }
+}

@@ -1,10 +1,11 @@
 #include <sourcemod>
+#include <sourcecolors>
 #include <autoexecconfig>
 
 #pragma newdecls required
 #pragma semicolon 1
 
-#define TAG_NCLR "[CSFIRE]"
+#define TAG_NCLR "[csfire.gg]"
 #define TAG_CLR "[\x10csfire.gg\x01]"
 
 ConVar g_cvEnableDisableKill;
@@ -14,13 +15,13 @@ public Plugin myinfo =
 	name = "csfire_disablekill",
 	author = "DRANIX",
 	description = "Disable console kill commands (sm_explode, sm_kill)",
-	version = "1.0",
+	version = "1.1",
 	url = "www.csfire.gg"
 };
 
 public void OnPluginStart()
 {
-	//LoadTranslations("csfire_disablekill.phrases");
+	LoadTranslations("csfire_disablekill.phrases");
 
 	AddCommandListener(Command_kill, "kill");
 	AddCommandListener(Command_kill, "explode");
@@ -46,7 +47,8 @@ public void OnConVarChanged(ConVar convar, const char[] oldValue, const char[] n
 public Action Command_kill(int client, const char[] command, int argc) {
 	if(g_cvEnableDisableKill.BoolValue)
     {
-		PrintToChat(client, "%s \x08You are not allowed to \x0Fkill \x08yourself.", TAG_CLR);
+		CPrintToChat(client, "%s %t", TAG_CLR, "Suicide_NotAllowed");
+		ReplyToCommand(client, "%s %t", TAG_NCLR, "Suicide_NotAllowed");
 		return Plugin_Handled;
     }
 
