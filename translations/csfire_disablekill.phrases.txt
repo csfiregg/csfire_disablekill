@@ -7,6 +7,6 @@
 
     "Suicide_NotAllowed_Console"
     {
-        "en"    "{$grey}You are not allowed to kill yourself."
+        "en"    "You are not allowed to kill yourself."
     }
 }
