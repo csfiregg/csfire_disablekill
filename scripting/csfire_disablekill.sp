@@ -48,7 +48,7 @@ public Action Command_kill(int client, const char[] command, int argc) {
 	if(g_cvEnableDisableKill.BoolValue)
     {
 		CPrintToChat(client, "%s %t", TAG_CLR, "Suicide_NotAllowed");
-		ReplyToCommand(client, "%s %t", TAG_NCLR, "Suicide_NotAllowed");
+		ReplyToCommand(client, "%s %t", TAG_NCLR, "Suicide_NotAllowed_Console");
 		return Plugin_Handled;
     }
 
