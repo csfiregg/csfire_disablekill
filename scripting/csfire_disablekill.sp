@@ -2,11 +2,11 @@
 #include <sourcecolors>
 #include <autoexecconfig>
 
-#pragma newdecls required
-#pragma semicolon 1
-
 #define TAG_NCLR "[csfire.gg]"
 #define TAG_CLR "[\x10csfire.gg\x01]"
+
+#pragma newdecls required
+#pragma semicolon 1
 
 ConVar g_cvEnableDisableKill;
 
@@ -15,7 +15,7 @@ public Plugin myinfo =
 	name = "csfire_disablekill",
 	author = "DRANIX",
 	description = "Disable console kill commands (sm_explode, sm_kill)",
-	version = "1.1",
+	version = "1.2",
 	url = "www.csfire.gg"
 };
 
@@ -28,7 +28,7 @@ public void OnPluginStart()
 
 	AutoExecConfig_SetFile("csfire_disablekill_config");
 
-	g_cvEnableDisableKill = AutoExecConfig_CreateConVar("sm_disablekill_enable", "0", "Enable or disabled kill console commands", FCVAR_PROTECTED, true, 0.0, true, 1.0);
+	g_cvEnableDisableKill = AutoExecConfig_CreateConVar("sm_disablekill", "0", "Enable or disabled kill console commands", FCVAR_PROTECTED, true, 0.0, true, 1.0);
 	g_cvEnableDisableKill.AddChangeHook(OnConVarChanged);
 
 	AutoExecConfig_ExecuteFile();
