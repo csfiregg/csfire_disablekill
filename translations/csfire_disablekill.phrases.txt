@@ -4,11 +4,13 @@
     {
         "en"    "{$grey}You are not allowed to {$darkred}kill {$grey}yourself."
         "ru"    "{$grey}Вам не позволено {$darkred}убить {$grey}себя."
+        "da"    "{$grey}Det er ikke tilladt at {$darkred}dræbe {$grey}sig selv."
     }
 
     "Suicide_NotAllowed_Console"
     {
         "en"    "You are not allowed to kill yourself."
         "ru"    "Вам не позволено убить себя."
+        "da"    "Det er ikke tilladt at dræbe sig selv."
     }
 }
